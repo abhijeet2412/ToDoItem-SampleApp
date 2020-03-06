@@ -34,16 +34,11 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: VSTest@2
+
+- task: DotNetCoreCLI@2
   inputs:
-    testSelector: 'testAssemblies'
-    testAssemblyVer2: |
-      **\*test*.dll
-      !**\*TestAdapter.dll
-      !**\obj\**
-      **\xunit.runner.visualstudio.testadapter.dll
-      **\xunit.runner.visualstudio.dotnetcore.testadapter.dll
-      /Framework:.NETCoreApp,Version=v3.1 /Enablecodecoverage
+    command: 'test'
+    projects: '**/*.csproj'
     searchFolder: '$(System.DefaultWorkingDirectory)'
     vsTestVersion: '16.0'
 
