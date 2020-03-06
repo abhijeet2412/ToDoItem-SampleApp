@@ -42,5 +42,6 @@ steps:
       !**\obj\**
       **\xunit.runner.visualstudio.testadapter.dll
       **\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+      /Framework:.NETCoreApp,Version=v3.1 /Enablecodecoverage
     searchFolder: '$(System.DefaultWorkingDirectory)'
     vsTestVersion: '16.0'
