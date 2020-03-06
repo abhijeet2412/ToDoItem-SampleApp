@@ -4,6 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 trigger:
+
 - master
 
 pool:
@@ -45,3 +46,9 @@ steps:
       /Framework:.NETCoreApp,Version=v3.1 /Enablecodecoverage
     searchFolder: '$(System.DefaultWorkingDirectory)'
     vsTestVersion: '16.0'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'XUnit'
+    testResultsFiles: '**/TEST-*.trx'
+    mergeTestResults: true
