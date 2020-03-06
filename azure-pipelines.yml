@@ -40,6 +40,7 @@ steps:
       **\*test*.dll
       !**\*TestAdapter.dll
       !**\obj\**
-      **\ToDoItemControllerTests.dll
+      !**\xunit.runner.visualstudio.testadapter.dll
+      !**\xunit.runner.visualstudio.dotnetcore.testadapter.dll
     searchFolder: '$(System.DefaultWorkingDirectory)'
     vsTestVersion: '16.0'
